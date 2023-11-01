@@ -26,14 +26,4 @@ export const questions: IQuestionForm[] = [
     answer: "MEKONG",
     key: 3
   },
-  {
-    question: "Thủ đô của nước Việt Nam là gì",
-    answer: "HANOI",
-    key: 3,
-  },
-  {
-    question: "Thành phố trực thuộc trung ương mạnh nhất về khả năng kinh tế của Việt Nam là gì",
-    answer: "TPHOCHIMINH",
-    key: 4
-  }
 ]
