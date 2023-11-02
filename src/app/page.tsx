@@ -29,16 +29,22 @@ export default function Home() {
     }
 
     const nextCellIndex = (cellIndex + 1) % gameMap[rowIndex].length;
+    const prevCellIndex = (cellIndex - 1) % gameMap[rowIndex].length;
+    const prevRow = (cellIndex - 1 < 0)? (rowIndex - 1) % gameMap.length : rowIndex
     const nextRow = (cellIndex + 1 === gameMap[rowIndex].length) ? (rowIndex + 1) % gameMap.length : rowIndex;
     const nextInput = document.querySelector(`input[data-row="${nextRow}"][data-cell="${nextCellIndex}"]`) as HTMLInputElement | null;
-    console.log(nextInput)
-    if (nextInput) {
+    const prevInput = document.querySelector(`input[data-row="${prevRow}"][data-cell="${prevCellIndex}"]`) as HTMLInputElement | null;
+    if (nextInput && inputValue.length > 0) {
       nextInput.focus();
+    }
+    if (prevInput && inputValue.length == 0){
+      prevInput.focus();
     }
   };
 
   const handleFocus = (event: React.SyntheticEvent<HTMLInputElement, Event>) =>{
-    event.target.select();
+    const target = event.target as HTMLInputElement;
+    target.select();
     return;
   }
 
